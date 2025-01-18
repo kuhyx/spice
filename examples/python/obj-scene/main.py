@@ -1,10 +1,16 @@
 from datetime import datetime
 import random
 import sys
+import argparse
+
 
 from openalea.photonmap.libphotonmap_core import *
 
 if __name__ == '__main__':
+    parser = argparse.ArgumentParser(description='Photon Mapping Renderer')
+    parser.add_argument('--obj', type=str, default='./original/mesh.obj', help='Path to the .obj file')
+    args = parser.parse_args()
+
     n_samples = 32
     n_photons = 100000
     n_estimation_global = 95
@@ -36,7 +42,7 @@ if __name__ == '__main__':
 
     print("Creating Scene..")
     scene = Scene()
-    scene.loadModel("mesh.obj")
+    scene.loadModel(args.obj)
     scene.build()
 
     print("Done!")
