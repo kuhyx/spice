@@ -8,6 +8,7 @@ minimal but extensible header only implementation of photon mapping in C++.
 # How to compile:
 create and activate the conda environment:
 ```bash
+cd conda
 mamba env create -f environment.yml
 mamba activate photonmap
 ```
@@ -28,6 +29,7 @@ make -j
 ```bash
 mamba activate photonmap
 cd examples/python/plantgl-rad-scene
+pip install openpyxl
 python planglRadScene.py
 ```
 
